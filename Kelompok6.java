@@ -318,7 +318,7 @@ public class Kelompok6 {
          if (("y".equals(konfirmHapus) | "Y".equals(konfirmHapus))){
              dataMax--;
              hapusElemen = noRuang - 1;
-             if (hapusElemen == noData){ noData--; }
+             if (hapusElemen == noData){ noData--; noDataView--; }
              else if ( hapusElemen<noData){
                  for (int s = hapusElemen; s<=noData;s = s+1){
                      nama[s] = nama[s+1];
@@ -333,7 +333,7 @@ public class Kelompok6 {
                      nasihat1[s] = nasihat1[s+1];
                      nasihat2[s] = nasihat2[s+1];
                  }
-                 noData--;    
+                 noData--; noDataView--;
              }
          JOptionPane.showMessageDialog(null,"Data Berhasil Terhapus!"); 
          }
