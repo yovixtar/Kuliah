@@ -287,7 +287,7 @@ public class Kelompok6 {
            do{
            cek = true;
            noRuang = Integer.parseInt(JOptionPane.showInputDialog("Pilih Nomor Ruang [ 1 - "+dataMax+" ]"));
-           if (noRuang>=1 & (noRuang<=noData+1)){cek = false;}
+           if (noRuang>=1 & (noRuang<=dataMax)){cek = false;}
            }while (cek);
         cek = false;
         }catch (Exception e){
@@ -320,7 +320,7 @@ public class Kelompok6 {
              hapusElemen = noRuang - 1;
              if (hapusElemen == noData){ noData--; noDataView--; }
              else if ( hapusElemen<noData){
-                 for (int s = hapusElemen; s<=noData;s = s+1){
+                 for (int s = hapusElemen; s<=noData;s = s++){
                      nama[s] = nama[s+1];
                      alamat[s] = alamat[s+1];
                      kota[s] = kota[s+1];
