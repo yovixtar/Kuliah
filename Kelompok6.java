@@ -320,7 +320,7 @@ public class Kelompok6 {
              hapusElemen = noRuang - 1;
              if (hapusElemen == noData){ noData--; noDataView--; }
              else if ( hapusElemen<noData){
-                 for (int s = hapusElemen; s<=noData;s = s++){
+                 for (int s = hapusElemen; s<=noData; s++){
                      nama[s] = nama[s+1];
                      alamat[s] = alamat[s+1];
                      kota[s] = kota[s+1];
