@@ -4,16 +4,21 @@ import java.util.*;
 import java.text.*;
 public class Kelompok6 {
     private static String tampil, lapor1,lapor2, menu, nama[], alamat[], kota[], statKawin[], pekerjaan[], noHP[], nasihat1[],nasihat2[],tingkat,kotaIn, statKawinIn, pekerjaanIn;
-    private static int noData, noDataView, anak[], gaji[], noRuang, pilihanEdit, hapusElemen, laporan1;
-    private static double jarak[],rata_jarak=0,grata_jarak=0,total_jarak=0,gtotal_jarak=0,ggtotal_jarak=0,total_gaji=0,gtotal_gaji=0,ggtotal_gaji=0,rata_gaji=0,grata_gaji=0;
+    private static int noData, noDataView, anak[], gaji[], noRuang, pilihanEdit, hapusElemen,total_gaji=0,gtotal_gaji=0,ggtotal_gaji=0,rata_gaji=0,grata_gaji=0;
+    private static double jarak[],rata_jarak=0,grata_jarak=0,total_jarak=0,gtotal_jarak=0,ggtotal_jarak=0;
     public static int ktp = 0, kbp = 0, kbb = 0, kpp = 0, ktl = 0, nk = 0, bn = 0, cm = 0, ch = 0, z = 0,gktp = 0, gkbp = 0, gkbb = 0, gkpp = 0, gktl = 0, gnk = 0, gbn = 0, gcm = 0, gch = 0;
     public static int tktp = 0, tkbp = 0, tkbb = 0, tkpp = 0, tktl = 0, tnk = 0, tbn = 0, tcm = 0, tch = 0;
     public static int pns = 0, wira = 0, gd = 0, ll = 0, tp = 0;
     public static int tpns = 0, twira = 0, tgd = 0, tll = 0, ttp = 0;
     public static int gpns = 0, gwira = 0, ggd = 0, gll = 0, gtp = 0;
     public static int ta = 0, tm = 0, tb = 0,tta = 0, ttm = 0, ttb = 0,gta = 0, gtm = 0, gtb = 0;
-    private static int h = 0, t_data, jh, x1, x2;
-    private static int no, c,tc;
+    private static int h = 0;
+    private static int t_data;
+    private static int jh;
+    private static int x1;
+    private static int x2;
+    private static int no;
+    private static int c,tc;
     public static void main(String[] args) {
         DateFormat formatTanggal =new SimpleDateFormat("dd - MMMM - YYYY");
         Date tanggalView =new Date();
@@ -248,7 +253,7 @@ public class Kelompok6 {
             case 12: break;
         }
 
-            tampil += "Nomor Data : "+noDataView+"\n                   DETAIL DATA WARGA"
+            tampil += "Nomor Data : "+noRuang+"\n                   DETAIL DATA WARGA"
                    + "\nNama Kepala Rumah Tangga    = "+nama[noRuang-1]
                    + "\nAlamat                                             = "+alamat[noRuang-1]
                    + "\nKota                                                 = "+kota[noRuang-1]
@@ -330,7 +335,7 @@ public class Kelompok6 {
                  }
                  noData--;    
              }
-         JOptionPane.showMessageDialog(null,"Data Berhasil Dihapus!"); 
+         JOptionPane.showMessageDialog(null,"Data Berhasil Terhapus!"); 
          }
          else{
             JOptionPane.showMessageDialog(null,"Data Tidak Terhapus!"); 
@@ -524,7 +529,7 @@ public class Kelompok6 {
                                 ll = ll + 1;
                             }
                             no = no + 1;
-                            lapor1 += "    " + no + "   " + nama[z] + "       " + pekerjaan[z] + "         "+ jarak[z] + "\n";
+                            lapor1 += "    " + no + "   " + nama[z] + "       " + pekerjaan[z] + "         "+ jarak[z] + " KM\n";
                             c=c+1;
                             total_jarak=total_jarak+jarak[z];
                              if(c<1){
@@ -536,7 +541,7 @@ public class Kelompok6 {
                         }
                        lapor1 += " --------------------------------------------------------------------------------------------------\n";
                        lapor1 += "  PNS                 =" + pns + "                GURU/DOSEN =" + gd + "                TNI/POLRI      =" + tp + "\n";
-                       lapor1 += "  WIRAUSAHA =" + wira + "                LAIN LAIN       =" + ll + "                RATA JARAK =" + rata_jarak + "\n";
+                       lapor1 += "  WIRAUSAHA =" + wira + "                LAIN LAIN       =" + ll + "                RATA JARAK =" + rata_jarak + "KM \n";
                         JOptionPane.showMessageDialog(null, lapor1, "LAPORAN PEKERJAAN WARGA",JOptionPane.INFORMATION_MESSAGE);
                         x1 = x1 + 4;
                         x2 = x2 + 4;
@@ -562,7 +567,7 @@ public class Kelompok6 {
                     lapor2 += "  PNS                 =" + gpns + "           GURU/DOSEN =" + ggd + "           TNI/POLRI      =" + gtp + "\n";
                     lapor2 += "  WIRAUSAHA =" + gwira + "            LAIN LAIN       =" + gll + "\n";
                     lapor2 += " ---------------------------------------------------------------------------------------\n";
-                    lapor2 += "  TOTAL KESELURUHAN JARAK =" + ggtotal_jarak + "      RATA RATA JARAK =" + grata_jarak + "\n";
+                    lapor2 += "  TOTAL KESELURUHAN JARAK =" + ggtotal_jarak +  "KM      RATA RATA JARAK =" + grata_jarak + "KM\n";
                     lapor1 += " -------------------------------------------------------------------------------------------\n";
                         JOptionPane.showMessageDialog(null, lapor2, "LAPORAN PEKERJAAN WARGA",JOptionPane.INFORMATION_MESSAGE);
                     break;
@@ -601,7 +606,7 @@ public class Kelompok6 {
                         }
                         for (int z = x1; z <= x2; z = z + 1) {
                             no = no + 1;
-                            lapor1 += "    " + no + "   " + nama[z] + "       " + pekerjaan[z] + "         "+ gaji[z] + "\n";
+                            lapor1 += "    " + no + "   " + nama[z] + "       " + pekerjaan[z] + "         Rp "+ gaji[z] + "\n";
                             c=c+1;
                             total_gaji=total_gaji+gaji[z];
                             if(c<1){
@@ -612,7 +617,8 @@ public class Kelompok6 {
                             }
                         }
                        lapor1 += " ----------------------------------------------------------------------------------------\n";
-                       lapor1 += "  TOTAL PENDAPATAN  =" + total_gaji + "            RATA RATA PENDAPATAN =" + rata_gaji + "\n";
+                       lapor1 += "  TOTAL PENDAPATAN          = Rp " + total_gaji + "\n";
+                       lapor1 += "  RATA RATA PENDAPATAN = Rp " + rata_gaji + "\n";
                         JOptionPane.showMessageDialog(null, lapor1, "LAPORAN PENERIMAAN PENDAPATAN WARGA",JOptionPane.INFORMATION_MESSAGE);
                         x1 = x1 + 5;
                         x2 = x2 + 5;
@@ -625,8 +631,8 @@ public class Kelompok6 {
                     lapor2 += "  LAPORAN REKAP PENERIMAAN PENDAPATAN WARGA\n";
                     lapor2 += "  TANGGAL :"+formatTanggal.format(tanggalView)+"                  HAL: " + (jh+1) + "\n";      
                     lapor2 += " ---------------------------------------------------------------------------------\n";
-                    lapor2 += "  TOTAL KESELURUHAN PENDAPATAN     =" + ggtotal_gaji + "\n";
-                    lapor2 += "  RATA RATA PENDPATAN                            =" + grata_gaji + "\n";
+                    lapor2 += "  TOTAL KESELURUHAN PENDAPATAN     = Rp " + ggtotal_gaji + "\n";
+                    lapor2 += "  RATA RATA PENDPATAN                            = Rp " + grata_gaji + "\n";
                     lapor2 += " ---------------------------------------------------------------------------------\n";
                         JOptionPane.showMessageDialog(null, lapor2, "LAPORAN REKAP PENERIMAAN PENDAPATAN WARGA",JOptionPane.INFORMATION_MESSAGE);
                     break;
